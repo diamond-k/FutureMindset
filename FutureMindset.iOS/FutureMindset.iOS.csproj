@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -12,8 +11,7 @@
     <RootNamespace>FutureMindset.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>FutureMindset.iOS</AssemblyName>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +25,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -94,6 +93,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AppleNativeBrowserService.cs" />
+    <Compile Include="Services\NavigationPageRendereriOS.cs" />
+    <Compile Include="Services\GradientColorStackRenderer.cs" />
+    <Compile Include="Services\RoundCornersEffectIOS.cs" />
+    <Compile Include="Services\BorderColorRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -103,16 +107,10 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
@@ -139,6 +137,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %285%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Webp.net-resizeimage %284%29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %286%29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %287%29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %288%29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %289%29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %2810%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -147,7 +153,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="Xamarin.Forms.CarouselView">
+      <Version>2.3.0-pre2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.4.0.1008975</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -155,5 +166,136 @@
       <Project>{26458BFA-38F1-48CA-8E9E-82D94A67C763}</Project>
       <Name>FutureMindset</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Webp.net-resizeimage %288%29.png" />
+    <BundleResource Include="Resources\outline_favorite_border_black_24dp.png" />
+    <BundleResource Include="Resources\outline_photo_library_black_24dp.png" />
+    <BundleResource Include="Resources\outline_photo_camera_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_language_black_24dp.png" />
+    <BundleResource Include="Resources\outline_store_black_24dp.png" />
+    <BundleResource Include="Resources\outline_account_circle_black_24dp.png" />
+    <BundleResource Include="Resources\outline_account_box_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_account_box_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_account_circle_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_favorite_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_photo_library_black_24dp.png" />
+    <BundleResource Include="Resources\future_mindset.png" />
+    <BundleResource Include="Resources\Camera.png" />
+    <BundleResource Include="Resources\Shopping.png" />
+    <BundleResource Include="Resources\Tag.png" />
+    <BundleResource Include="Resources\Twitter.png" />
+    <BundleResource Include="Resources\5149.jpg" />
+    <BundleResource Include="Resources\bg.png" />
+    <BundleResource Include="Resources\ItbPLRs0MKacYlDO.png" />
+    <BundleResource Include="Resources\baseline_photo_camera_black_24dp.png" />
+    <BundleResource Include="Resources\outline_home_black_24dp.png" />
+    <BundleResource Include="Resources\round_home_black_24dp.png" />
+    <BundleResource Include="Resources\baseline_home_black_36dp.png" />
+    <BundleResource Include="Resources\Very_Basic_About_icon_full.png" />
+    <BundleResource Include="Resources\Very_Basic_About_icon.png" />
+    <BundleResource Include="Resources\Full_House_icon.png" />
+    <BundleResource Include="Resources\House_icon.png" />
+    <BundleResource Include="Resources\Very_Basic_Home_Filled_icon.png" />
+    <BundleResource Include="Resources\Very_Basic_Home_icon_outline.png" />
+    <BundleResource Include="Resources\User_Interface_Settings_con.png" />
+    <BundleResource Include="Resources\Users_User_Male_3_icon.png" />
+    <BundleResource Include="Resources\Users_User_Male-4_icon.png" />
+    <BundleResource Include="Resources\if_user_male2_172626 %281%29.png" />
+    <BundleResource Include="Resources\Apps_user_info_icon.png" />
+    <BundleResource Include="Resources\Users_User_Male_2_icon.png" />
+    <BundleResource Include="Resources\Home_2_2_icon.png" />
+    <BundleResource Include="Resources\Back.png" />
+    <BundleResource Include="Resources\outline_home_black_24pt_3x.png" />
+    <BundleResource Include="Resources\outline_home_black_24pt_2x.png" />
+    <BundleResource Include="Resources\outline_home_black_24pt_1x.png" />
+    <BundleResource Include="Resources\Pacifico-Regular.ttf" />
+    <BundleResource Include="Resources\if_Hand_1021018.png" />
+    <BundleResource Include="Resources\if_hand_1.png" />
+    <BundleResource Include="Resources\if_multimedia-14_809486.png" />
+    <BundleResource Include="Resources\photo_multimedia.png" />
+    <BundleResource Include="Resources\camera_128.png" />
+    <BundleResource Include="Resources\if_camera_67156 %281%29.png" />
+    <BundleResource Include="Resources\if_camera_299066.png" />
+    <BundleResource Include="Resources\if_camera_299066 %281%29.png" />
+    <BundleResource Include="Resources\if_Camera-Front.png" />
+    <BundleResource Include="Resources\if_Camera_Front.png" />
+    <BundleResource Include="Resources\favorite.png" />
+    <BundleResource Include="Resources\favourite.png" />
+    <BundleResource Include="Resources\if_11_408055.png" />
+    <BundleResource Include="Resources\favorite1.png" />
+    <BundleResource Include="Resources\if_16_3319628 %281%29.png" />
+    <BundleResource Include="Resources\if_heart.png" />
+    <BundleResource Include="Resources\like.png" />
+    <BundleResource Include="Resources\if_check_1055094.png" />
+    <BundleResource Include="Resources\if_compose_1055085.png" />
+    <BundleResource Include="Resources\image.png" />
+    <BundleResource Include="Resources\photo_camera.png" />
+    <BundleResource Include="Resources\picture.png" />
+    <BundleResource Include="Resources\photo_camera%281%29.png" />
+    <BundleResource Include="Resources\email1.png" />
+    <BundleResource Include="Resources\email2.png" />
+    <BundleResource Include="Resources\if_Letter_1872934 %281%29.png" />
+    <BundleResource Include="Resources\mail2.png" />
+    <BundleResource Include="Resources\message.png" />
+    <BundleResource Include="Resources\Mail_withAtSign_icon.png" />
+    <BundleResource Include="Resources\if_at_sign_1.png" />
+    <BundleResource Include="Resources\if_at_sign_2.png" />
+    <BundleResource Include="Resources\if_at_sign_3.png" />
+    <BundleResource Include="Resources\information.png" />
+    <BundleResource Include="Resources\information1.png" />
+    <BundleResource Include="Resources\photo_camera1.png" />
+    <BundleResource Include="Resources\heart.png" />
+    <BundleResource Include="Resources\subscribe.png" />
+    <BundleResource Include="Resources\camera2.png" />
+    <BundleResource Include="Resources\camera4.png" />
+    <BundleResource Include="Resources\photo_camera3.png" />
+    <BundleResource Include="Resources\heart2.png" />
+    <BundleResource Include="Resources\subscribe_icon.png" />
+    <BundleResource Include="Resources\favourite_heart.png" />
+    <BundleResource Include="Resources\subscribe_2.png" />
+    <BundleResource Include="Resources\subscribe_3.png" />
+    <BundleResource Include="Resources\subscribe_4.png" />
+    <BundleResource Include="Resources\FM.png" />
+    <BundleResource Include="Resources\FM_2.png" />
+    <BundleResource Include="Resources\FM_3.png" />
+    <BundleResource Include="Resources\FM_4.png" />
+    <BundleResource Include="Resources\fm_5.png" />
+    <BundleResource Include="Resources\FM_6.png" />
+    <BundleResource Include="Resources\FM_7.png" />
+    <BundleResource Include="Resources\fave.png" />
+    <BundleResource Include="Resources\fave1.png" />
+    <BundleResource Include="Resources\fave2.png" />
+    <BundleResource Include="Resources\backgroundimage.png" />
+    <BundleResource Include="Resources\fm_8.png" />
+    <BundleResource Include="Resources\Camera-Front.png" />
+    <BundleResource Include="Resources\rsz_fm_8.png" />
+    <BundleResource Include="Resources\contactMe1.jpg" />
+    <BundleResource Include="Resources\mobile-phone-in-hand-hand-holding-smartphone-flat-design_15267-12.jpg" />
+    <BundleResource Include="Resources\hands-coffee-smartphone-technology.jpg" />
+    <BundleResource Include="Resources\contactMe4.jpg" />
+    <BundleResource Include="Resources\contactMe2.jpg" />
+    <BundleResource Include="Resources\2530007-24.png" />
+    <BundleResource Include="Resources\2674053-24.png" />
+    <BundleResource Include="Resources\1518230-24.png" />
+    <BundleResource Include="Resources\1608790-24.png" />
+    <BundleResource Include="Resources\background-blur-clean-531880.jpg" />
+    <BundleResource Include="Resources\writting.jpeg" />
+    <BundleResource Include="Resources\white-canvas-background_1053-239.jpg" />
+    <BundleResource Include="Resources\imageWallPaper.jpg" />
+    <BundleResource Include="Resources\originalWallPaper.jpg" />
+    <BundleResource Include="Resources\heart-love-romance-valentine.jpg" />
+    <BundleResource Include="Resources\pexels-photo-262028.jpeg" />
+    <BundleResource Include="Resources\pexels-photo-414645.jpeg" />
+    <BundleResource Include="Resources\heart1.png" />
+    <BundleResource Include="Resources\subscription1.png" />
+    <BundleResource Include="Resources\photoImage.png" />
+    <BundleResource Include="Resources\faveLights1.jpeg" />
+    <BundleResource Include="Resources\faveLights.jpeg" />
+    <BundleResource Include="Resources\1.jpeg" />
+    <BundleResource Include="Resources\2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

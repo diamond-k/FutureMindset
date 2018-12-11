@@ -1,7 +1,107 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FutureMindset" x:Class="FutureMindset.MainPage">
-	<StackLayout>
-		<!-- Place new controls here -->
-		<Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-	</StackLayout>
-</ContentPage>
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:FutureMindset"
+			 xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+			 xmlns:border="clr-namespace:FutureMindset.CustomControls;assembly=FutureMindset"
+			 x:Class="FutureMindset.MainPage" 
+			 NavigationPage.HasNavigationBar="false"
+			>
+			<!--BackgroundColor="#151515"-->
+	<TabbedPage.Children>
+
+		<!--<local:FavoritesPage>
+		</local:FavoritesPage>
+		House_icon.png-->
+		<!--<local:WebPage>
+		</local:WebPage>-->	
+
+		<NavigationPage Title="Welcome" Icon="if_hand_1.png">
+			<x:Arguments>
+				<local:WelcomePage />
+			</x:Arguments>
+		</NavigationPage>
+<!--if_at_sign_2 BackgroundImage="writting.jpeg"-->
+		<ContentPage Icon="2674053-24.png"  Title="Contact">
+			<ContentPage.Content>
+
+<!--				<ScrollView VerticalOptions="FillAndExpand" Orientation="Vertical">-->
+			<Grid>
+					
+               		<Grid.RowDefinitions>
+								<RowDefinition Height="125"/>	
+								<RowDefinition Height="*"/>		
+								<RowDefinition Height="50"/>	
+					</Grid.RowDefinitions>
+		
+			<Label Grid.Row="0" HorizontalOptions="Center" Margin="0" Text="Contact Me"
+               		TextColor="Black" Font="Pacifico-Regular, 28"  VerticalOptions="Center" />					
+
+	
+						
+			<StackLayout Grid.Row="1" VerticalOptions="StartAndExpand" Spacing="8" >	
+
+<!--				<Image Margin="10,0" Source="contactMe4.jpg"/>-->
+						
+						
+	<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="contactMe4.jpg" AbsoluteLayout.LayoutBounds="0,0,1,1"
+        
+          AbsoluteLayout.LayoutFlags="All" />
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+		<Grid  AbsoluteLayout.LayoutBounds="0,0,1,1" >
+			<BoxView Color="Black" Opacity="0.6" Margin="10,0" AbsoluteLayout.LayoutBounds="0,0,1,1" />	
+        
+			</Grid>
+        </ScrollView>
+    </AbsoluteLayout>
+
+             	 <StackLayout BackgroundColor="#8b8378"  Margin="10,0" >
+					<Label Margin="20"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"  BackgroundColor="#8b8378" 
+						Text="I am here to answer any questions you may have about my photos. Reach out to me and I will respond as soon as I can.">				
+					</Label>							
+		
+			</StackLayout>
+	
+				<StackLayout Margin="10,0" >		
+					<TableView HeightRequest="400" BackgroundColor="Transparent"  HasUnevenRows="false" RowHeight="65" Intent="Form" >
+						<TableRoot>
+							<TableSection>
+								<ImageCell ImageSource="1608790-24.png" Tapped="Phone_Tapped"  Text="Phone" Detail="+44 7976 632975‬"></ImageCell>
+								<ImageCell ImageSource="if_at_sign_2.png" Tapped="Email_Tapped" Text="Email" Detail="futuremindset@mail.com"></ImageCell>
+								<ImageCell ImageSource="2530007-24.png" Tapped="Website_Tapped" Text="Website" Detail="www.future-mindset.com"></ImageCell>										
+							</TableSection>									
+						</TableRoot>							
+				</TableView>			
+				</StackLayout>
+			</StackLayout>		
+<!--						</Grid>-->
+</Grid>
+<!--						</ScrollView>-->
+			</ContentPage.Content>
+		</ContentPage>			
+		<ContentPage Icon="Very_Basic_About_icon.png" Title="About">
+			<ContentPage.Content>
+					<Grid>					
+               			<Grid.RowDefinitions>
+							<RowDefinition Height="125"/>	
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+					<Label Grid.Row="0" HorizontalOptions="Center" Margin="0" Text="About Me"
+               		TextColor="Black" Font="Pacifico-Regular, 28"  VerticalOptions="Center" />			
+
+
+					
+               		</Grid>
+			</ContentPage.Content>
+		</ContentPage>
+	</TabbedPage.Children>
+</TabbedPage>
+
+
+		<!-- "Full-House-icon.png"
+		"Very-Basic-About-icon-full.png" 
+		"Users-User-Male-2-icon.png"-->
+	
+			
+

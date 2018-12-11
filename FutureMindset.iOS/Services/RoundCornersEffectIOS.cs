@@ -1,4 +1,10 @@
 ﻿using System;
+using FutureMindset.CustomControls;
+using FutureMindset.iOS;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+
+using CoreAnimation;
 
 [assembly: ExportEffect(typeof(RoundCornersEffectIOS), nameof(RoundCornersEffect))]
 namespace FutureMindset.iOS
@@ -14,12 +20,6 @@ namespace FutureMindset.iOS
         protected override void OnDetached()
         {
             Container.Layer.CornerRadius = new nfloat(0);
-        }
-
-        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)
-        {
-            if (args.PropertyName == RoundCornersEffect.CornerRadiusProperty.PropertyName)
-                SetCornerRadius();
         }
 
         private void PrepareContainer()

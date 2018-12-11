@@ -48,17 +48,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2" />
+    <PackageReference Include="Xamarin.Forms.CarouselView">
+      <Version>2.3.0-pre2</Version>
+    </PackageReference>
+    <PackageReference Include="BottomNavigationBar">
+      <Version>1.4.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.1.0.697729</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\MainPageRenderer.cs" />
+    <Compile Include="Services\AndroidNativeBrowser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -72,16 +95,41 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\futuremindset.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\futuremindset.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\futuremindset.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\futuremindset.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\futuremindset.png" />
+    <AndroidResource Include="Resources\drawable\outline_favorite_border_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\outline_photo_camera_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\outline_photo_library_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\baseline_language_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\outline_store_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\baseline_favorite_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\baseline_account_box_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\baseline_account_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\baseline_photo_library_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\outline_account_box_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\outline_account_circle_black_24dp.png" />
+    <AndroidResource Include="Resources\drawable\ItbPLRs0MKacYlDO.png" />
+    <AndroidResource Include="Resources\drawable\Camera.png" />
+    <AndroidResource Include="Resources\drawable\Shopping.png" />
+    <AndroidResource Include="Resources\drawable\Tag.png" />
+    <AndroidResource Include="Resources\drawable\Twitter.png" />
+    <AndroidResource Include="Resources\drawable\Full-House-icon.png" />
+    <AndroidResource Include="Resources\drawable\House-icon.png" />
+    <AndroidResource Include="Resources\drawable\User_Interface_Settings_3_icon.png" />
+    <AndroidResource Include="Resources\drawable\Users-User-Male-3-icon.png" />
+    <AndroidResource Include="Resources\drawable\Users-User-Male-4-icon.png" />
+    <AndroidResource Include="Resources\drawable\Very-Basic-About-icon-full.png" />
+    <AndroidResource Include="Resources\drawable\Very-Basic-About-icon.png" />
+    <AndroidResource Include="Resources\drawable\Very-Basic-Home-Filled-icon.png" />
+    <AndroidResource Include="Resources\drawable\Very-Basic-Home-icon-outline.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -89,6 +137,8 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FutureMindset\FutureMindset.csproj">

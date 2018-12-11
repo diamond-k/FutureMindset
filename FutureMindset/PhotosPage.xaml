@@ -1,5 +1,74 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FutureMindset.PhotosPage">
-	<ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="FutureMindset.PhotosPage"
+			 Title="Photos" 
+			 xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+		<ContentPage.Content>
+	<!--	<StackLayout >
+			<StackLayout.Margin>
+				<OnPlatform x:TypeArguments="Thickness">
+      				<On Platform="iOS" Value="0"  />
+      				<On Platform="Android, UWP" Value="0" />
+    			</OnPlatform>		
+   			</StackLayout.Margin>-->
+		 <!--<Label Text="Photos" HorizontalTextAlignment="Center" TextColor="#323232" 
+				FontSize="20" Margin="0,15,0,0"> </Label>
+			-->
+
+			<forms:CarouselView Margin="0,0,0,15" x:Name="mainCarouselView" ItemsSource="{Binding Images}">
+		  		<forms:CarouselView.ItemTemplate>
+		        	<DataTemplate>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+<!--								<RowDefinition Height="Auto"/>		-->
+            					<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+						
+							<Image Grid.RowSpan="1"  Aspect="AspectFill" Source="{Binding Path=Url}"/>
+		
+<!--						<Image 1a11a1 HeightRequest="30" Margin="10,0" WidthRequest="30" HorizontalOptions="Center" Grid.Row="1"  Source="fave2.png"></Image>-->
+
+							<Button  Grid.Row="1" Command="{Binding Source={x:Reference mainCarouselView},
+							Path=BindingContext.OpenUrlCommand}" 
+									CommandParameter="{Binding Path=BuyMeUrl}"
+									BackgroundColor="Black"  Margin="5,0,5,0" Text="Buy Me"  
+									TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+									BorderRadius="10" BorderWidth="2" BorderColor="Black" VerticalOptions="Center">
+<!--#ff0000 3A444D-->
+								<Button.HeightRequest>
+									<OnPlatform x:TypeArguments="x:Double">
+                          				<On Platform="iOS">42</On>
+                         			    <On Platform="Android,Windows">35</On>
+               					 	</OnPlatform>
+    							</Button.HeightRequest>
+								<Button.FontSize>
+									<OnPlatform x:TypeArguments="x:Double">
+                          				<On Platform="iOS">16</On>
+                         			    <On Platform="Android,Windows">12</On>
+               					 	</OnPlatform>
+    							</Button.FontSize>
+							</Button>
+						</Grid>
+					</DataTemplate>				
+				</forms:CarouselView.ItemTemplate>	
+			</forms:CarouselView>	
+
+<!--		</StackLayout>-->
 	</ContentPage.Content>
 </ContentPage>
+
+<!--
+			<Image Source="baseline_favorite_black_24dp.png">
+    			<Image.GestureRecognizers>
+        			<TapGestureRecognizer
+                		Tapped="OnImageNameTapped"
+                		NumberOfTapsRequired="1" />
+  					</Image.GestureRecognizers>
+				</Image>
+			-->
+
+				<!--<StackLayout Grid.Row="1" BackgroundColor="#ff0000" Padding="10" Margin="10,0">
+								<Label Text="Buy Me"  TextColor="White" FontSize="20" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>s
+							</StackLayout>		-->	

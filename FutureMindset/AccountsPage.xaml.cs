@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace FutureMindset
 {
-    public partial class SubscribePage : ContentPage
+    public partial class AccountsPage : ContentPage
     {
-        public SubscribePage()
+        public AccountsPage()
         {
             InitializeComponent();
 

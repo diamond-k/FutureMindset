@@ -2,7 +2,7 @@
 <ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
 Icon="baseline_account_box_black_24dp.png" Title="Account"  
 			  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			  x:Class="FutureMindset.SubscribePage">
+			  x:Class="FutureMindset.AccountsPage">
 	<ContentPage.Content>
 
 <!--		  Title="Online Store"
@@ -20,7 +20,7 @@ Icon="baseline_account_box_black_24dp.png" Title="Account"
         </StackLayout>-->
 
 				<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-					<Label Text="Welcome to accounts page :)" TextColor="#323232"/>
+					<Label Text="Welcome to poo us page :)" TextColor="#323232"/>
 				</StackLayout>	
 	</ContentPage.Content>
 </ContentPage>

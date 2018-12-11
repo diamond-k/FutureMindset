@@ -1,5 +1,87 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FutureMindset.WelcomePage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:controls="clr-namespace:FutureMindset;assembly=FutureMindset"
+			 xmlns:local="clr-namespace:FutureMindset.CustomControls;assembly:FutureMindset"
+			 x:Class="FutureMindset.WelcomePage"
+			 x:Name="Home" 
+			 NavigationPage.HasNavigationBar="false" 	   >
 	<ContentPage.Content>
-	</ContentPage.Content>
+<!--BackgroundImage="background-blur-clean-531880.jpg"-->
+    	<Grid RowSpacing="0">
+        	<Grid.RowDefinitions>
+           	 <RowDefinition Height="120" />
+           	 <RowDefinition Height="*" />
+<!--            <RowDefinition Height="50" />-->
+       		 </Grid.RowDefinitions>
+
+        <!--  title  -->
+        <Label  HorizontalOptions="Center" Margin="0,5,0,0" Text="Future Mindset"
+               TextColor="Black" Font="Pacifico-Regular, 28"  VerticalOptions="Center" />
+			
+		<StackLayout Margin="10,0,10,0" Grid.Row="1" >
+			 
+				<Grid RowSpacing="8">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="180"/>
+						<RowDefinition Height="180" />
+						<RowDefinition Height="180" />
+					</Grid.RowDefinitions>
+				<!--	<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition/>			
+					</Grid.ColumnDefinitions>-->
+	
+					
+			<Frame Padding="0"  
+				   Grid.Row="0" 		   
+				   Grid.ColumnSpan="2" 			
+				   CornerRadius="5" 
+				   HasShadow="false">
+					<controls:Dashboard.GestureRecognizers>
+                   		<TapGestureRecognizer Tapped="CameraButtonTapped" />
+               		</controls:Dashboard.GestureRecognizers>			
+						<controls:Dashboard
+								Label="Photos" 
+								Icon="photo_camera1.png">     <!--	  photoImage.png -->
+						</controls:Dashboard>
+			</Frame>	
+       
+			<Frame Padding="0"  
+				   Grid.Row="1" 
+				   Grid.ColumnSpan="2" 				
+				   CornerRadius="5" 
+				   HasShadow="false">
+					<controls:FavoritesContentView.GestureRecognizers >
+                   		<TapGestureRecognizer Tapped="FavoriteButtonTapped" />
+               		</controls:FavoritesContentView.GestureRecognizers>			
+						<controls:FavoritesContentView
+								Label="Favourites" 
+								Icon="heart.png" 
+								Margin="0,2,0,0">            <!--    heart1.png -->                        
+						</controls:FavoritesContentView>
+			</Frame>
+			
+					
+			<Frame Padding="0"  
+				   Grid.Row="2" 
+				   Grid.ColumnSpan="2" 
+				   CornerRadius="5" 
+				   HasShadow="false">  
+					<controls:SubscriptionContentView.GestureRecognizers>
+                   		<TapGestureRecognizer Tapped="SubscribeButtonTapped" />
+               		</controls:SubscriptionContentView.GestureRecognizers>			
+					<controls:SubscriptionContentView
+								Label="Subscribe" 
+								Icon="subscribe_4.png">   <!--  subscription1.png -->                                
+					</controls:SubscriptionContentView>
+						 
+			</Frame>
+
+
+			 </Grid>
+            </StackLayout>
+    </Grid>
+   
+    </ContentPage.Content>
 </ContentPage>

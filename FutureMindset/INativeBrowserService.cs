@@ -1,10 +1,8 @@
 ﻿using System;
 namespace FutureMindset
 {
-    public class INativeBrowserService
+    public interface INativeBrowserService
     {
-        public INativeBrowserService()
-        {
-        }
+        void LaunchNativeEmbeddedBrowser(string url);
     }
 }

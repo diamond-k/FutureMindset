@@ -25,6 +25,34 @@ namespace FutureMindset.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            // Color of the tabbar background:
+            UITabBar.Appearance.BarTintColor = UIColor.FromRGB(255, 255, 255);
+            // #1D1C20
+            //#0B0B0D
+            //UITabBar.Appearance.BarTintColor = UIColor.FromRGB(241, 242, 242);
+
+
+            // Color of the selected tab icon:
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(255, 0, 0);
+   
+            // Color of the selected tab text color:
+            UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes()
+            {
+                TextColor = UIColor.FromRGB(255, 0, 0)
+                //("#FF9500")89, 86, 214);
+            },
+            UIControlState.Selected);
+            
+            // Color of the unselected tab icon & text:
+            UITabBarItem.Appearance.SetTitleTextAttributes(
+                new UITextAttributes()
+                { 
+                    //TextColor = UIColor.FromRGB(19, 23, 26)
+                    //146, 146, 146)
+                    //(139,139,139)
+                },
+                UIControlState.Normal);
+    
             return base.FinishedLaunching(app, options);
         }
     }

@@ -1,5 +1,91 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FutureMindset.FavoritesPage">
-	<ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="FutureMindset.FavoritesPage"
+			 xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+			 Title="Favourites"
+			 Icon="baseline_favorite_black_24dp.png">
+
+	<ContentPage.Content>		
+		<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+			<StackLayout.Margin>
+				<OnPlatform x:TypeArguments="Thickness">
+      				<On Platform="iOS" Value="0,20" />
+      				<On Platform="Android, UWP" Value="0" />
+    			</OnPlatform>		
+   			</StackLayout.Margin>
+
+			<Label Text="Welcome to favourites page :)" TextColor="#323232"/>
+		
+			<!--<Label Text="My Favorites" HorizontalTextAlignment="Center"  Margin="0,15,0,0" TextColor="#323232" 
+				   FontSize="20"> </Label>-->
+<!--
+			<forms:CarouselView Margin="0,15" x:Name="favCarouselView">
+		  		<forms:CarouselView.ItemTemplate >
+		        	<DataTemplate>
+						<Image Source="{x:Binding}" />
+					</DataTemplate>		
+				</forms:CarouselView.ItemTemplate>	
+			</forms:CarouselView>
+			<Grid>
+				
+<			</Grid>-->
+		
+<!--		  <ScrollView Margin="1" Orientation="Vertical" VerticalOptions="StartAndExpand">-->
+<!--
+    <Grid RowSpacing="5" ColumnSpacing="0">
+				<Grid.Margin>
+					<OnPlatform x:TypeArguments="Thickness">
+      				<On Platform="iOS" Value="23,15" />
+      				<On Platform="Android, UWP" Value="23,15" />
+    			</OnPlatform>				
+				</Grid.Margin>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+	
+            
+            <Image  Source="http://www.lottiedesigns.com/wp-content/uploads/2016/11/tash_guy_488-500x800.jpg" Aspect="AspectFill" Grid.Row="0" 
+				   Grid.Column="0" BackgroundColor="White">  
+						<Image.GestureRecognizers>
+        			<TapGestureRecognizer
+                		Tapped="OnImageNameTapped"
+                		NumberOfTapsRequired="1" />
+  					</Image.GestureRecognizers>
+            </Image>
+   
+            <Image   Source="http://www.desktop-screens.com/data/out/71/3128717-marvel-heroes-wallpapers.png"  Aspect="AspectFill" Grid.Row="0" 
+				   Grid.Column="1" BackgroundColor="White" >
+						<Image.GestureRecognizers>
+        			<TapGestureRecognizer
+                		Tapped="OnImageNameTapped"
+                		NumberOfTapsRequired="1" />
+  					</Image.GestureRecognizers>
+            </Image>
+
+-->
+           <!-- <Image Source="http://www.j-safe.co.uk/wp-content/uploads/revslider/NiceAndClean_Projects/carousel4-500x800.jpg" Grid.Row="1"
+				   Grid.Column="0" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            </Image>-->
+
+          <!--  <Image Source="https://static.zerochan.net/Spain.full.594626.jpg" Grid.Row="1" Grid.Column="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            </Image>
+			   <Image Source="https://static.zerochan.net/Spain.full.594626.jpg" Grid.Row="1" Grid.Column="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            </Image>
+			   <Image Source="https://static.zerochan.net/Spain.full.594626.jpg" Grid.Row="1" Grid.Column="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            </Image>
+
+        </Grid>-->
+<!--	  </ScrollView>-->
+			</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
+<!--outline_favorite_border_black_24dp.png-->

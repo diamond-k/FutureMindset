@@ -1,5 +1,92 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FutureMindset.SubscribePage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="FutureMindset.SubscribePage"
+             xmlns:effects="clr-namespace:FutureMindset.CustomControls;assembly=FutureMindset"
+             Title="Subscribe">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+			<StackLayout.Margin>
+				<OnPlatform x:TypeArguments="Thickness">
+      				<On Platform="iOS" Value="0,20" />
+      				<On Platform="Android, UWP" Value="0" />
+    			</OnPlatform>		
+   			</StackLayout.Margin>
+
+			<Label Text="Welcome to Subscribe page :)" TextColor="#323232"/>
+		
+
+
+            
+                   <!-- <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="125"/>    
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>-->
+<!--                <Label  HorizontalOptions="Center" VerticalOptions="Start" Font="Pacifico-Regular, 26" Grid.Row="0" Text="FM" TextColor="#F62C2C"/>-->
+               
+                
+                
+<!--                <StackLayout Grid.Row="1"  Orientation="Vertical" Spacing="100" VerticalOptions="Start" >  -->
+<!--				rsz_fm_8.png-->
+<!--					<Image Source="if_check_1055094"  VerticalOptions="Start"  HorizontalOptions="Center"/>-->
+
+			<!--	<StackLayout  VerticalOptions="End"  Spacing="20">
+                 <Button  BackgroundColor="#3A444D" Margin="30,0" Text="SIGN ME UP!"  
+                                TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                                 BorderWidth="2" BorderRadius="10"
+                                BorderColor="#3A444D" >
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                          <On Platform="iOS">45</On>
+                                         <On Platform="Android,Windows">35</On>
+                                        </OnPlatform>
+                                </Button.HeightRequest>
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                          <On Platform="iOS">16</On>
+                                         <On Platform="Android,Windows">12</On>
+                                        </OnPlatform>
+                                </Button.FontSize>
+                            </Button>
+
+
+              -->     
+
+<!--#ff0000-->
+			<!--<Button  BackgroundColor="White" Margin="30,0" Text="LOGIN"  
+                                TextColor="#1A1A1A" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                                BorderRadius="10" BorderWidth="2" BorderColor="#1A1A1A">
+
+                                <Button.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                          <On Platform="iOS">45</On>
+                                         <On Platform="Android,Windows">35</On>
+                                        </OnPlatform>
+                                </Button.HeightRequest>
+                                <Button.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                          <On Platform="iOS">16</On>
+                                         <On Platform="Android,Windows">12</On>
+                                        </OnPlatform>
+                                </Button.FontSize>
+                            </Button>
+					</StackLayout>-->
+                            <!--<Entry Placeholder="Enter text here">
+                                    <Entry.Keyboard>
+                                        <Keyboard x:FactoryMethod="Create">
+                                                <x:Arguments>
+                                                    <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+                                              </x:Arguments>
+                                        </Keyboard>
+                                    </Entry.Keyboard>
+                                </Entry>-->
+<!--                            </StackLayout>        -->
+<!--                        </Grid>-->
+
+
+
+			</StackLayout>
+    </ContentPage.Content>
 </ContentPage>

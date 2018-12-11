@@ -11,7 +11,15 @@ namespace FutureMindset
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+          //  MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
+
+            //Background color
+          
+            //MainPage.SetValue(NavigationPage.BarBackgroundColorProperty,Color.Yellow);
+
+            //Title color
+           // MainPage.SetValue(NavigationPage.BarTextColorProperty, "#222222");
         }
 
         protected override void OnStart()
