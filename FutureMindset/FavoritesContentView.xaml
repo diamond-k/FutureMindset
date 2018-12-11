@@ -9,7 +9,7 @@
          AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"/>
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
 		<Grid  AbsoluteLayout.LayoutBounds="0,0,1,1" >
-		<BoxView Color="Black" Opacity="0.6" AbsoluteLayout.LayoutBounds="0,0,1,1" />	
+		<BoxView Color="Black" Opacity="0.8" AbsoluteLayout.LayoutBounds="0,0,1,1" />	
           <StackLayout Orientation="Vertical" VerticalOptions="Center"  HorizontalOptions="Center"  x:Name="SwitchboardColour" >
 
         <Image x:Name="SwitchboardIcon" 

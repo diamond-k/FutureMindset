@@ -10,12 +10,6 @@
 			<!--BackgroundColor="#151515"-->
 	<TabbedPage.Children>
 
-		<!--<local:FavoritesPage>
-		</local:FavoritesPage>
-		House_icon.png-->
-		<!--<local:WebPage>
-		</local:WebPage>-->	
-
 		<NavigationPage Title="Welcome" Icon="if_hand_1.png">
 			<x:Arguments>
 				<local:WelcomePage />
@@ -50,7 +44,7 @@
           AbsoluteLayout.LayoutFlags="All" />
         <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
 		<Grid  AbsoluteLayout.LayoutBounds="0,0,1,1" >
-			<BoxView Color="Black" Opacity="0.6" Margin="10,0" AbsoluteLayout.LayoutBounds="0,0,1,1" />	
+			<BoxView Color="Black" Opacity="0.7" Margin="10,0" AbsoluteLayout.LayoutBounds="0,0,1,1" />	
         
 			</Grid>
         </ScrollView>
